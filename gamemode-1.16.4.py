@@ -31,12 +31,20 @@ def show_me(source: CommandSource):
                 f.write(str(coord.x) + ' ' + str(coord.y) + ' ' + str(coord.z))
                 f.close()
                 f = open("./plugins/gm/" + source.player + '.dat', 'w')
+                with open("./plugins/gm/a.txt", "w") as test:
+                        test.write(str(dim))
                 if dim == 0:
                         f.write("minecraft:overworld")
-                elif dim == 1:
+                if dim == 2:
                         f.write("minecraft:the_end")
-                else:
+                if dim == 1:
                         f.write("minecraft:the_nether")
+                if dim == 3:
+                        f.write("minecraft:oneblock_world")
+                if dim == 5:
+                        f.write("minecraft:oneblock_world_the_end")
+                if dim == 4:
+                        f.write("minecraft:oneblock_world_nether")
                 f.close()
                 source.get_server().execute("gamemode spectator " + source.player)
 
