@@ -39,11 +39,11 @@ def show_me(source: CommandSource):
                         f.write("minecraft:the_end")
                 if dim == 1:
                         f.write("minecraft:the_nether")
-                if dim == 3:
+                if dim == 'minecraft:oneblock_world':
                         f.write("minecraft:oneblock_world")
-                if dim == 5:
+                if dim == 'minecraft:oneblock_world_the_end':
                         f.write("minecraft:oneblock_world_the_end")
-                if dim == 4:
+                if dim == 'minecraft:oneblock_world_nether':
                         f.write("minecraft:oneblock_world_nether")
                 f.close()
                 source.get_server().execute("gamemode spectator " + source.player)
